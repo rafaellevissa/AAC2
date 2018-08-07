@@ -60,7 +60,7 @@ trait Session
 		$_SESSION[$key] = $value;
 	}
 
-	public static function has_flash($name = null)
+	public static function hasFlash($name = null)
 	{
 		$name = 'flash_' . $name;
 		if (isset($_SESSION[$name])) {
@@ -70,7 +70,7 @@ trait Session
 		return false;
 	}
 
-	public static function get_flash($name = null)
+	public static function getFlash($name = null)
 	{
 		$name = 'flash_' . $name;
 		if (isset($_SESSION[$name])) {

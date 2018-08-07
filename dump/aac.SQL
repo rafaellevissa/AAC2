@@ -19,16 +19,16 @@ USE `aac`;
 CREATE TABLE IF NOT EXISTS `categoria` (
   `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
-  `categoria_geral` int(11) DEFAULT '0',
+  `categoria_geral` int(11) DEFAULT NULL,
   `data_cadastro` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela aac.categoria: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
 REPLACE INTO `categoria` (`id_categoria`, `nome`, `categoria_geral`, `data_cadastro`) VALUES
-	(1, 'Comer', 0, '2018-08-06 22:43:27'),
-	(2, 'Beber', 0, '2018-08-06 22:43:40');
+	(8, 'comer', 0, '2018-08-07 09:25:02'),
+	(9, 'beber', 0, '2018-08-07 09:25:14');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 
 

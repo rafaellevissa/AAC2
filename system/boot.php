@@ -29,7 +29,7 @@ else
 {   
     # Include the start application file
     require_once('start-application.php');
-    $startApplicationBy = str_replace('.', '=', $startApplicationBy);
+    $startApplicationBy = str_replace('.', '=', $start_application_by);
 
     if ( ! empty($startApplicationBy)) {
         # Redirect to the first Controller
