@@ -1,3 +1,9 @@
+#requisitos de ambiente
+instalar o php
+descomentar no arquivo php.ini: pdo_mysql
+criar base de dados mysql com base no arquivo /dump/aac.SQL
+Colocar a senha do banco no arquivo /database/DatabaseConfig.php
+
 # Ofir_Framework-0.1
 
 # Description
