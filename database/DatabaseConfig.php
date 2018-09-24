@@ -7,11 +7,10 @@ trait DatabaseConfig
     protected static $password;
 
     public static function databaseConfigAttributes()
-    {
-        # Put your credentials of database localhost here
-        self::$host = "localhost";
+    {        
+        self::$host = "35.237.179.69";
         self::$dbname = "aac";
         self::$username = "root";
-        self::$password = "";
+        self::$password = "Luc@slevi";
     }
 }
