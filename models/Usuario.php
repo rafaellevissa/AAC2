@@ -7,4 +7,9 @@ class Usuario extends Model
 	{
 		return $this->select()->getAll();
 	}
+
+	public function cadastrar($data)
+	{
+		return $this->save($data);
+	}
 }
