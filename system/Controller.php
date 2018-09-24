@@ -48,6 +48,24 @@ class Controller
 			exit();
 		}
 	}
+
+	protected function service($service_name)
+	{
+		# Path of the Service folder
+		$path = 'service';
+		# Verify if Service Exist
+		if (file_exists("{$path}/{$service_name}.php")) {
+		    $service = "{$service_name}";
+		    
+            # Include the Service
+			require_once("{$path}/{$service_name}.php");
+			# Instantiante the class Service and passing the Database Connection
+			return $service = new $service(Database::connect());
+		} else {
+			echo "( <b>{$service_name}</b> ) Service not exist in ( <b>{$path}</b> ) folder.";
+			exit();
+		}
+	}
 	
 	protected function view()
 	{

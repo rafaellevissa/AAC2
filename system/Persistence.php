@@ -78,14 +78,14 @@ class Persistence
 		$sql->execute();
 
 		if ($type_return == "array") {
-			return $sql->fetch(PDO::FETCH_ASSOC);
+			return $sql->fetchAll(PDO::FETCH_ASSOC);
 		} 
 
 		if ($type_return == "obj") {
-			return $sql->fetch(PDO::FETCH_OBJ);
+			return $sql->fetchAll(PDO::FETCH_OBJ);
 		} 
 
-		return $sql->fetch(PDO::FETCH_OBJ);
+		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
     
     /**
@@ -178,9 +178,14 @@ class Persistence
     * @return boolean true or false
     */
 
-	public function update(Array $data, $id)
+	public function update(Array $data, $id, $field_name = false)
 	{   
 		$id = (int) $id;
+		$primary_key_name = 'id';
+
+		if ($field_name) {
+			$primary_key_name = $field_name;
+		}
 		
 		# Prepare the fields
 		$set = "set";
@@ -190,7 +195,7 @@ class Persistence
         
         $set_size = strlen($set);
 		$token = substr($set, -$set_size, -2);
-		$token .= " WHERE id = " . "?";
+		$token .= " WHERE {$primary_key_name} = " . "?";
         
         # prepare the values
         $values = "";
