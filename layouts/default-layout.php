@@ -26,6 +26,15 @@
       #centered {
         margin:0 auto;
       }
+
+      .center-block {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .footer {
+        background:silver;
+      }
     </style>
 
   </head>
